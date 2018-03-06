@@ -20,6 +20,11 @@
           #navbar nav ul li a:visited {
             color: black; }
 
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 body {
   margin: 0;
   padding: 0;
