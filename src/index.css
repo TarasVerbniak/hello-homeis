@@ -22,7 +22,11 @@
 
 .main {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-around; }
+  .main div {
+    padding: 10px;
+    text-align: center;
+    background-color: red; }
 
 body {
   margin: 0;

@@ -1,6 +1,9 @@
 import { Urls, Actions } from './constants';
 
 // Action Creators
+export const initialize = () => ({
+    type: Actions.INITIALIZE_PROJECT
+});
 export const getGuideList = () => ({
     type: Actions.FETCH_GUIDE_LIST,
     url: Urls.guideList

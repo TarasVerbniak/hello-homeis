@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getGuideList, getGuide } from '../redux/actions'
-import GuideList from './GuideList'
+import { getGuideList, getGuide, initialize } from '../redux/actions';
+import GuideList from './GuideList';
 import Guide from './Guide';
 
 class Main extends Component {
 
   componentDidMount(){
-    setTimeout(() => {
-      this.props.getGuideList()
-    }, 1000)
+    this.props.initialize();
   }
 
   render() {
@@ -33,7 +31,8 @@ function mapDispatch(dispatch){
   return {
     dispatch,
     getGuideList: () => dispatch(getGuideList()),
-    getGuide: (url) => dispatch(getGuide(url))
+    getGuide: (url) => dispatch(getGuide(url)),
+    initialize: () => dispatch(initialize())
   };
 }
 
