@@ -2,7 +2,8 @@ import { Actions } from "../actions/constants";
 
 const initState = {
   guideList: [],
-  guide: null
+  guide: null,
+  showSpinner: false
 };
 
 export default function(state = initState, action) {
@@ -13,6 +14,8 @@ export default function(state = initState, action) {
       return { ...state, guideList: data };
     case Actions.SET_SINGLE_GUIDE:
       return { ...state, guide: data };
+    case Actions.TOGGLE_SPINNER:
+      return { ...state, showSpinner: !state.showSpinner };
     default:
       return state;
   }

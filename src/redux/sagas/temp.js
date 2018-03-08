@@ -91,7 +91,7 @@ export const list = {
       comments: 0,
       eventTime: "2018-02-25T14:53:47.105Z",
       liked: false,
-      tags: ["Relocation"],
+      tags: ["Relocation", "Home", "Journey"],
       edited: false,
       pinned: false,
       context: {
@@ -144,7 +144,7 @@ export const list = {
       comments: 0,
       eventTime: "2018-01-31T16:03:52.863Z",
       liked: false,
-      tags: [],
+      tags: ["Other"],
       edited: false,
       pinned: false,
       context: {
@@ -197,7 +197,7 @@ export const list = {
       comments: 0,
       eventTime: "2018-01-31T15:54:26.767Z",
       liked: false,
-      tags: [],
+      tags: ["Other"],
       edited: false,
       pinned: false,
       context: {
@@ -250,7 +250,7 @@ export const list = {
       comments: 0,
       eventTime: "2018-01-31T15:49:25.717Z",
       liked: false,
-      tags: [],
+      tags: ["Other"],
       edited: false,
       pinned: false,
       context: {

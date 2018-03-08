@@ -1,5 +1,11 @@
 import { Actions, Urls } from "../actions/constants";
-import { setGuideList, setGuide, getGuide, getGuideList } from "../actions";
+import {
+  setGuideList,
+  setGuide,
+  getGuide,
+  getGuideList,
+  toggleSpinner
+} from "../actions";
 import { list, guide } from "./temp";
 import { call, take, put, fork, all } from "redux-saga/effects";
 
@@ -21,7 +27,7 @@ const $get = url =>
       }
 
       resolve(data);
-    }, 4000);
+    }, 3000);
   }).then(res => res);
 
 function* fetchDataTask({ type, url }) {
@@ -60,7 +66,7 @@ export function* initSagaWatcher() {
   while (true) {
     try {
       yield take(Actions.INITIALIZE_PROJECT);
-      // Start loader here
+      yield put(toggleSpinner());
 
       const listAction = getGuideList();
       const guideAction = getGuide(Urls.guide);
@@ -69,11 +75,11 @@ export function* initSagaWatcher() {
         call(fetchDataTask, listAction),
         call(fetchDataTask, guideAction)
       ]);
-      // Remove loader here
+      yield put(toggleSpinner());
     } catch (e) {
       console.log("Something went wrong inside initSagaWatcher...");
     }
   }
 }
 
-export default [ initSagaWatcher, mainSagaWatcher ];
+export default [initSagaWatcher, mainSagaWatcher];

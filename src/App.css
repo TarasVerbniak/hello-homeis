@@ -1,29 +1,134 @@
+h1,
+h3,
+ul {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: black; }
+  a:hover {
+    color: #999999; }
+
 #navbar {
   padding: 1rem 5rem;
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 1px #999999; }
+  border-bottom: 2px solid rgba(153, 153, 153, 0.2); }
   #navbar img {
     width: 130px; }
   #navbar nav {
     width: 300px; }
     #navbar nav ul {
       display: flex;
-      justify-content: space-around; }
+      justify-content: space-between; }
       #navbar nav ul li {
         list-style: none;
         font-weight: 600; }
-        #navbar nav ul li a {
-          text-decoration: none;
-          color: black; }
-          #navbar nav ul li a:visited {
-            color: black; }
 
 .main {
   display: flex;
-  justify-content: space-around; }
-  .main div {
-    padding: 10px;
-    text-align: center;
-    background-color: red; }
+  flex-direction: row; }
+  .main #guide {
+    width: 50%;
+    padding: 0 2rem 0 5rem; }
+  .main #list {
+    width: 50%;
+    padding: 0 5rem 0 2rem; }
+  .main .guide-list-wrapper {
+    padding: 0 5vw; }
+    .main .guide-list-wrapper:first-child {
+      padding-bottom: 42px;
+      border-bottom: 2px solid rgba(153, 153, 153, 0.2); }
+    .main .guide-list-wrapper .list-item {
+      padding: 5% 0 20% 0;
+      margin-top: 5px;
+      text-align: left; }
+      .main .guide-list-wrapper .list-item.border-top {
+        border-top: 5px solid rgba(153, 153, 153, 0.2); }
+      .main .guide-list-wrapper .list-item .guide-item-wrapper {
+        width: 100%;
+        display: flex; }
+      .main .guide-list-wrapper .list-item .guide-info {
+        padding-right: 5%;
+        width: 70%; }
+        .main .guide-list-wrapper .list-item .guide-info p {
+          font-size: 0.8rem;
+          margin-bottom: 0; }
+        .main .guide-list-wrapper .list-item .guide-info .tags {
+          color: #f98100; }
+      .main .guide-list-wrapper .list-item .guide-list-img {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 30%; }
+        .main .guide-list-wrapper .list-item .guide-list-img img {
+          width: 100%; }
+      .main .guide-list-wrapper .list-item .author {
+        color: #999999;
+        font-style: italic; }
+  .main .guide-author {
+    display: flex;
+    margin-bottom: 20px; }
+    .main .guide-author img {
+      width: 60px;
+      height: auto;
+      border-radius: 10px; }
+    .main .guide-author p {
+      margin: 0 10px; }
+    .main .guide-author .guide-author-data {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; }
+      .main .guide-author .guide-author-data .guide-actor-name {
+        font-weight: bold; }
+      .main .guide-author .guide-author-data .guide-time {
+        color: #999999;
+        font-size: 0.85rem; }
+  .main .guide-img {
+    display: flex;
+    max-height: 300px;
+    width: 100%;
+    margin-bottom: 40px; }
+    .main .guide-img img {
+      max-width: 100%;
+      object-fit: cover;
+      border-radius: 10px; }
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .spinner h3 {
+    color: #40c9a2;
+    margin-bottom: 10px; }
+
+@media (max-width: 900px) {
+  #list,
+  #guide {
+    padding: 0 1rem !important; }
+  #navbar {
+    padding: 1rem; }
+  .guide-list-wrapper {
+    padding: 0 !important; }
+    .guide-list-wrapper:first-child {
+      padding-bottom: 42px !important; } }
+
+@media (max-width: 620px) {
+  .main {
+    flex-direction: column; }
+    .main > div {
+      box-sizing: border-box;
+      width: 100% !important;
+      padding: 1rem !important; }
+  #navbar {
+    flex-direction: column; }
+    #navbar nav {
+      margin-top: 25px !important;
+      width: 100%; }
+      #navbar nav ul {
+        justify-content: space-around; } }
